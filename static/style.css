@@ -1,0 +1,218 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+a{
+    text-decoration: none;
+}
+.no-underline {
+    text-decoration: none;
+}
+  
+
+h1 {
+    color: #00796b;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    text-align: center;
+}
+
+p {
+    font-size: 1rem;
+    margin: 10px 0;
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.5;
+    color: #757575;
+}
+
+.diagnose-button {
+    font-family: inherit;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #64b5f6, #42a5f5);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diagnose-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.diagnose-button:active {
+    transform: translateY(1px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#selectedSymptoms {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #00796b;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #4caf50;
+}
+
+/* Scrollable container */
+#scrollableContainer {
+    max-height: 45vh; 
+    overflow-y: auto;
+    max-width: 95%;
+    padding: 15px;
+    border-radius: 15px;
+    background: #f1f8e9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+#scrollableContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.symptomBubble {
+    display: inline-block;
+    margin: 8px;
+    padding: 12px 24px;
+    background: #aed581; 
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #33691e;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.symptomBubble:hover {
+    background: #9ccc65;
+    box-shadow: 0px 6px 12px rgba(103, 58, 183, 0.2);
+    transform: scale(1.05);
+}
+
+.symptomBubble.selected {
+    background: #7cb342; 
+    color: #ffffff;
+    box-shadow: 0px 6px 12px rgba(41, 182, 246, 0.3);
+}
+
+input[type="text"] {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1rem;
+    margin-top: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for Diagnosis Results */
+#result h2 {
+    font-size: 1.5rem;
+    color: #00796b;
+    margin-bottom: 10px;
+}
+
+#result ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#result li {
+    font-size: 1rem;
+    color: #33691e;
+    margin: 5px 0;
+    padding: 8px;
+    background: #e8f5e9;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#result p {
+    font-size: 1rem;
+    color: #c20a00be;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.icon-button:hover {
+    background-color: #d6ffef;
+}
+
+.icon-button svg {
+    width: 24px;
+    height: 24px;
+    stroke: #111827;
+    fill: none;
+    stroke-width: 2;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    input[type="text"] {
+        width: 90%;
+    }
+}

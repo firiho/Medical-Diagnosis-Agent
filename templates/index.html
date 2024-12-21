@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Medical Diagnosis</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="icon" href="{{ url_for('static', path='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+<h1>Medical Diagnosis Agent</h1>
+<!-- Restart button (right aligned) -->
+<button type="button" class="icon-button" onclick="restart()" title="Restart">
+    <svg viewBox="0 0 24 24">
+        <path d="M2 12a10 10 0 1010-10" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M2 2v4h4" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+</button>
+<p>Select your symptoms</p>
+<div id="scrollableContainer">
+    <div id="symptomContainer">
+        {% for s in symptoms %}
+        <button class="symptomBubble" data-symptom="{{ s }}">{{ s }}</button>
+        {% endfor %}
+    </div>
+</div>
+<div id="result"></div>
+
+<p>Or, describe how you feel</p>
+<input type="text" id="symptomText" placeholder="e.g., I have a runny or stuffy nose and sneezing">
+<button type="button" class="diagnose-button" onclick="submitTextSymptoms()">Diagnose</button>
+
+<div id="result"></div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
